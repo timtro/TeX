@@ -1,0 +1,13 @@
+\RequirePackage{fontawesome}
+\RequirePackage{environ}
+\NewEnviron{QuoteTweet}[3]{
+  \begin{center}%
+    \fcolorbox{black!10}{black!1}{\parbox{0.85\textwidth}{%
+      \RaggedRight%
+      \faTwitter\ \textbf{#1}\\
+      {\sffamily\color{black!50}#2}\\[1ex]
+      \BODY\\[1ex]\RaggedLeft
+      {\footnotesize\url{#3}}%
+    }}
+  \end{center}
+}

@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% A package designed to implement my favourite font setup for use
+% with Libertinus for body and math.
+%
+% Version: 0.1 - Nov 2016.
+%
+% Author: Timothy A.V. Teatro <timothy.teatro@uoit.net>
+%
+%
+%
+%%% Font selection and related definitions
+%====================================================================
+
+
+\usepackage{amsmath, mathtools}
+\usepackage{pgfornament}
+\usepackage{fontspec}
+\defaultfontfeatures{RawFeature=+calt}
+\usepackage{libertine}
+\usepackage{lualatex-math}
+\usepackage[math-style=ISO, partial=upright]{unicode-math}
+\setmathfont[Scale=MatchUppercase]{libertinusmath-regular.otf}
+\setmonofont{Source Code Pro}[Scale = MatchLowercase]
+
+% \setmainfont{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+%\setmathfont[AutoFakeBold]{libertinusmath-regular.otf}
+% \setmathfont{Libertinus Math}
+%\setmathfont[range={\lbrace, \rbrace}]{Latin Modern Math}
+%\setmathfont[range={\vert, \Vert, \Vvert}]{Latin Modern Math}
+
+% \setmonofont{Ubuntu Mono}[
+%   Scale=MatchLowercase,
+%   ItalicFeatures={Scale=MatchLowercase},
+%   ItalicFont={Ubuntu Mono Italic},
+% ] % Bad match for xheight in italics
+% \setmonofont{IBM Plex Mono}[Scale = MatchLowercase]
+% \setmonofont{Fira Code}[Scale = MatchLowercase, AutoFakeSlant=0.225]
+% \setmonofont{Liberation Mono}[Scale = MatchLowercase]
+% \setmonofont{Libertinus Sans}
+% \setmonofont{Hasklig}[
+%   Extension = .otf ,
+%   UprightFont = *-Regular ,
+%   BoldFont = *-Semibold ,
+%   FontFace = {k}{n}{*-Black} ,
+%   Scale = MatchLowercase
+% ]
+
+% \captiontitlefont{\footnotesize\sffamily}
+% \captionnamefont{\footnotesize\sffamily}
+
+\usepackage{lettrine}
+\newfontfamily{\infamily}{Roboto Condensed}[Scale=MatchLowercase]
+\renewcommand*{\DefaultLoversize}{0.1}
+\renewcommand{\LettrineFontHook}{\infamily}
+\renewcommand{\LettrineTextFont}{\sffamily\MakeTextUppercase}
+
+\usepackage{adforn}
+\usepackage{pgfornament}
+\newcommand{\asterismFrame}[1]{\par\bigskip\noindent\hfill #1 \hfill\null\par\bigskip\@afterindentfalse\@afterheading}
+\newcommand{\linearAsterism}{\asterismFrame{$*\quad*\quad*$}}
+\newcommand{\bouquetAsterism}{\asterismFrame{%
+    \begin{tikzpicture}
+      \node[anchor=centre, rotate=120]{\pgfornament[width=.5cm]{9}}
+    \end{tikzpicture}
+  }
+}
+\newcommand{\fleurAsterism}{\asterismFrame{\adfflowerright}}
+\newcommand{\sAsterism}{\asterismFrame{\adfopenflourishleft}}
+\newcommand{\ssAsterism}{\asterismFrame{\adfdoubleflourishleft}}
+\newcommand{\sssAsterism}{\asterismFrame{\adftripleflourishleft}}
+\newcommand{\sickleAsterism}{\asterismFrame{\adfsickleflourishleft}}
+
+\setmathfont[range={}]{libertinusmath-regular.otf} % Reload with empty range for correct spacing

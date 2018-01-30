@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% A package implementing style and options for code listing with
+% focus on C++ code.
+%
+% Version: 0.1 - Nov 2016.
+%
+% Author: Timothy A.V. Teatro <timothy.teatro@uoit.net>
+%
+%
+%%%
+%====================================================================
+
+\RequirePackage{listings}
+\RequirePackage{tColours}
+\lstloadlanguages{[11]C++}
+\lstdefinestyle{C++GIT}{ %
+  language=[11]C++,
+  xleftmargin=\parindent,
+  % columns=flexible,
+  breakatwhitespace=true,
+  breaklines=true,
+  keepspaces=true,
+  showstringspaces=true,
+  showtabs=false,
+  tabsize=2,
+  basicstyle=\ttfamily\lst@ifdisplaystyle\small\fi,
+  directivestyle={\color{gitish:red}},
+  keywordstyle=\bfseries\color{gitish:red},
+  commentstyle=\itshape\color{git:ltgray},
+  identifierstyle=\color{git:dkgray},
+  stringstyle=\color{git:orange},
+  numberstyle=\color{git:orange},
+  emphstyle=\color{gitish:turquoise}
+}
+\lstset{
+  language=[11]C++,
+  style=C++GIT,
+  morekeywords={override},
+  moreemph={std, void, string, int, float, double, vector}
+}

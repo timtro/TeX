@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% A package implementing tools for numbering and titleing in
+% assignments.
+%
+% Version: 0.1 - Nov 2016.
+%
+% Author: Timothy A.V. Teatro <timothy.teatro@uoit.net>
+%
+%
+%%%
+%====================================================================
+\RequirePackage{graphicx, calc, xcolor, xparse}
+
+\makeatletter
+
+\newdimen\tempdima
+\newdimen\tempdimb
+
+\definecolor{qbox:box}{gray}{0}
+\definecolor{qbox:text}{gray}{1}
+
+\newcommand\fromqboxsep{5pt}
+
+\NewDocumentCommand{\@setQuestion}{m}{%
+     \penalty-200 \vskip\baselineskip%
+     \def\qbox{\colorbox{qbox:box}{\textcolor{qbox:text}{\Large\itshape #1}}}
+     \settowidth\tempdima{\qbox}%
+     \setlength\tempdimb{-0.5\tempdima}%
+     \noindent\null\hskip\tempdimb\qbox\hskip\fromqboxsep%
+}
+
+\newcounter{questioncount}
+\setcounter{questioncount}{0}
+\newcommand{\nquestion}{%
+   \refstepcounter{questioncount}%
+   \@setQuestion{\arabic{questioncount}.}}
+
+\makeatother
