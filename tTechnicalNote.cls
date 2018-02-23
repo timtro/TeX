@@ -32,7 +32,7 @@
 \usepackage{xparse, calc}
 \usepackage{ragged2e}
 \usepackage{marginnote}
-
+\usepackage[fleqn]{amsmath}
 
 
 %%% Page layout
@@ -68,82 +68,40 @@
 %%% Theorems, proofs, defs, etc.
 %====================================================================
 
-
 \usepackage{amsthm}
-\usepackage[framemethod=tikz]{mdframed}
-
 \newtheoremstyle{plain}
-  {\topsep}    % ABOVESPACE
-  {\topsep}    % BELOWSPACE
-  {\itshape}  % BODYFONT
-  {0pt}        % INDENT (empty value is the same as 0pt)
-  {\bfseries}  % HEADFONT
-  {.}          % HEADPUNCT
+  {\topsep}       % ABOVESPACE
+  {\topsep}       % BELOWSPACE
+  {\itshape}      % BODYFONT
+  {0pt}           % INDENT (empty value is the same as 0pt)
+  {\bfseries}     % HEADFONT
+  {.}             % HEADPUNCT
   {5pt plus 1pt minus 1pt} % HEADSPACE
-  {}          % CUSTOM-HEAD-SPEC
+  {}              % CUSTOM-HEAD-SPEC
 
-\newtheoremstyle{definition}
-  {\topsep}    % ABOVESPACE
-  {\topsep}    % BELOWSPACE
-  {\normalfont}  % BODYFONT
-  {0pt}        % INDENT (empty value is the same as 0pt)
-  {\bfseries}  % HEADFONT
-  {.}          % HEADPUNCT
+\newtheoremstyle{plainRoman}
+  {\topsep}       % ABOVESPACE
+  {\topsep}       % BELOWSPACE
+  {\normalfont}   % BODYFONT
+  {0pt}           % INDENT (empty value is the same as 0pt)
+  {\bfseries}     % HEADFONT
+  {.}             % HEADPUNCT
   {5pt plus 1pt minus 1pt} % HEADSPACE
-  {}          % CUSTOM-HEAD-SPEC
+  {}              % CUSTOM-HEAD-SPEC
 
 \newtheoremstyle{remark}
-  {.5\topsep}    % ABOVESPACE
-  {.5\topsep}    % BELOWSPACE
-  {\normalfont}  % BODYFONT
-  {0pt}        % INDENT (empty value is the same as 0pt)
-  {\itshape}  % HEADFONT
-  {.}          % HEADPUNCT
+  {.5\topsep}     % ABOVESPACE
+  {.5\topsep}     % BELOWSPACE
+  {\normalfont}   % BODYFONT
+  {0pt}           % INDENT (empty value is the same as 0pt)
+  {\itshape}      % HEADFONT
+  {.}             % HEADPUNCT
   {5pt plus 1pt minus 1pt} % HEADSPACE
-  {}          % CUSTOM-HEAD-SPEC
+  {}              % CUSTOM-HEAD-SPEC
 
 \theoremstyle{plain}
-
-\newtheorem*{identity*}{Identity}
-\surroundwithmdframed[
-  hidealllines=true,
-  innerleftmargin=1em,
-  innerrightmargin=1em,
-  innertopmargin=0pt,
-  ]{identity*}
-
-\newmdtheoremenv[
-  hidealllines=true,
-  innerleftmargin=1em,
-  innerrightmargin=1em,
-  innertopmargin=0pt,
-  ]{identity}{Identity}[chapter]
-
-\newmdtheoremenv[
-  hidealllines=true,
-  leftline=true,
-  innerleftmargin=10pt,
-  innerrightmargin=10pt,
-  innertopmargin=0pt,
-  ]{definition}{Definition}
-
-\theoremstyle{definition}
-\newmdtheoremenv[
-  hidealllines=true,
-  innerleftmargin=1em,
-  innerrightmargin=1em,
-  subtitlefont={\itshape},
-  ]{displayAlgorithm}{Algorithm}[chapter]
-
-\theoremstyle{remark}
-\newtheorem*{remark*}{Remark}
-\surroundwithmdframed[
-  hidealllines=true,
-  leftline=true,
-  innerleftmargin=10pt,
-  innerrightmargin=10pt,
-  innertopmargin=0pt,
-  ]{remark*}
+\newtheorem{definition}{Definition}
+\numberwithin{definition}{chapter}
 
 \NewDocumentCommand{\MarginDefinition}{mO{0pt}}{%
    \refstepcounter{definition}%
@@ -275,7 +233,6 @@
 
 \NewDocumentCommand{\anno}{m}{\oldstylenums{#1}}
 \NewDocumentCommand{\decade}{m}{\anno{#1}s}
-
 
 
 \makeatother
