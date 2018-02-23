@@ -1,3 +1,6 @@
+# tlmgr packages:
+/latex/acro
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
