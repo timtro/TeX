@@ -28,7 +28,7 @@
 
 \usepackage{memhfixc}
 \usepackage{microtype}
-\usepackage{siunitx}
+\usepackage[binary-units = true]{siunitx}
 \usepackage{xparse, calc}
 \usepackage{ragged2e}
 \usepackage{marginnote}
@@ -57,8 +57,8 @@
 \newcounter{sideNoteNum}[chapter]
 \NewDocumentCommand{\SideNote}{mO{0pt}}{%
         \refstepcounter{sideNoteNum}%
-        \mbox{\textsuperscript{\arabic{sideNoteNum}}}%
-        \marginnote{\indent\mbox{\normalsize\textsuperscript{\arabic{sideNoteNum}}}\hspace{0pt}~\footnotesize #1}[#2]%
+        \mbox{\textsuperscript{\normalfont\{\arabic{sideNoteNum}\}}}%
+        \marginnote{\indent\mbox{\normalsize\textsuperscript{\normalfont\{\arabic{sideNoteNum}\}}}\hspace{0pt}~\footnotesize #1}[#2]%
 }
 \renewcommand*{\raggedleftmarginnote}{\RaggedRight}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
