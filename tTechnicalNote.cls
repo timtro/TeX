@@ -55,10 +55,10 @@
 
 
 \newcounter{sideNoteNum}[chapter]
-\NewDocumentCommand{\SideNote}{mO{0pt}}{%
+\NewDocumentCommand{\SideNote}{O{0pt} m}{%
         \refstepcounter{sideNoteNum}%
         \mbox{\textsuperscript{\normalfont\{\arabic{sideNoteNum}\}}}%
-        \marginnote{\indent\mbox{\normalsize\textsuperscript{\normalfont\{\arabic{sideNoteNum}\}}}\hspace{0pt}~\footnotesize #1}[#2]%
+        \marginnote{\indent\mbox{\normalsize\textsuperscript{\normalfont\{\arabic{sideNoteNum}\}}}\hspace{0pt}~\footnotesize #2}[#1]%
 }
 \renewcommand*{\raggedleftmarginnote}{\RaggedRight}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
