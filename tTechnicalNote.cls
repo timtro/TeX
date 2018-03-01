@@ -58,7 +58,7 @@
 \NewDocumentCommand{\SideNote}{O{0pt} m}{%
         \refstepcounter{sideNoteNum}%
         \mbox{\textsuperscript{\normalfont\{\arabic{sideNoteNum}\}}}%
-        \marginnote{\indent\mbox{\normalsize\textsuperscript{\normalfont\{\arabic{sideNoteNum}\}}}\hspace{0pt}~\footnotesize #2}[#1]%
+        \marginnote{\indent\mbox{\normalsize\textsuperscript{\normalfont\{\arabic{sideNoteNum}\}}}\hspace{0pt}~\normalfont\footnotesize #2}[#1]%
 }
 \renewcommand*{\raggedleftmarginnote}{\RaggedRight}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
@@ -103,11 +103,12 @@
 \newtheorem{definition}{Definition}
 \numberwithin{definition}{chapter}
 
-\NewDocumentCommand{\MarginDefinition}{mO{0pt}}{%
+\NewDocumentCommand{\MarginDefinition}{O{0pt} m}{%
    \refstepcounter{definition}%
    \@afterindentfalse\@afterheading%
-   \marginnote{\rule{\marginparwidth}{2pt}\smallbreak\noindent\footnotesize\textbf{Definition \thedefinition.}\hspace{0.5em plus 0.25em minus .1em} #1\smallbreak%
-   \noindent\rule{\marginparwidth}{.5pt}}[#2]%
+   \marginnote{\rule{\marginparwidth}{2pt}\smallbreak\noindent\footnotesize\textbf{Definition
+   \thedefinition.}\hspace{0.25em plus 0.25em minus .1em}\itshape #2\smallbreak%
+   \noindent\rule{\marginparwidth}{.5pt}}[#1]%
 }
 
 
