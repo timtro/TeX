@@ -9,7 +9,7 @@
 %
 %
 \NeedsTeXFormat{LaTeX2e}%
-\ProvidesClass{tTechnicalNote}
+\ProvidesClass{tTechnicalNote}[v0.9.1]
 \makeatletter
 \LoadClass[11pt, oneside, article]{memoir}
 
@@ -34,6 +34,13 @@
 \usepackage{marginnote}
 \usepackage[fleqn]{amsmath}
 
+%%% Class options
+%====================================================================
+
+
+\newif\ifrdraftdoc\rdraftdocfalse
+\DeclareOption{roughdraft}{\rdraftdoctrue}
+\ProcessOptions\relax
 
 %%% Page layout
 %====================================================================
@@ -157,12 +164,22 @@
   \createplainmark{bib}{both}{\bibname}
   \createplainmark{index}{both}{\indexname}
   \createplainmark{glossary}{both}{\glossaryname}}
-\makeevenhead{technote}{\normalfont\thepage}{}%
-                        {\let\\=\relax\normalfont\thetitle}
-\makeoddhead{technote}{\let\\=\relax\normalfont\thetitle}{}%
-                       {\normalfont\thepage}
-\makeevenfoot{technote}{\scriptsize ©\the\year\ \@author\ — All Rights Reserved}{}{}
-\makeoddfoot{technote}{\scriptsize ©\the\year\ \@author\ — All Rights Reserved}{}{}
+\makeevenhead{technote}%
+    {\normalfont\thepage}%
+    {}%
+    {\let\\=\relax\normalfont\thetitle}
+\makeoddhead{technote}%
+    {\let\\=\relax\normalfont\thetitle}%
+    {}%
+    {\normalfont\thepage}
+\makeevenfoot{technote}%
+    {\scriptsize ©\the\year\ \@author\ — All Rights Reserved}%
+    {}%
+    {\ifrdraftdoc\textbf{\textit{DRAFT}—Consider inc\ mpl\ te and inkorrekt}\fi}
+\makeoddfoot{technote}%
+    {\scriptsize ©\the\year\ \@author\ — All Rights Reserved}%
+    {}%
+    {\ifrdraftdoc\textbf{\textit{DRAFT}—Consider inc-mpl-te and inkorrekt}\fi}
 
 \aliaspagestyle{chapter}{technote}
 \setlength{\headwidth}{\textwidth}
