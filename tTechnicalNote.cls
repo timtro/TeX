@@ -38,8 +38,13 @@
 %====================================================================
 
 
+\usepackage{fontawesome}
 \newif\ifrdraftdoc\rdraftdocfalse
+
 \DeclareOption{roughdraft}{\rdraftdoctrue}
+\newcommand{\draftwarnicon}{\faExclamationTriangle}
+
+
 \ProcessOptions\relax
 
 %%% Page layout
@@ -175,11 +180,17 @@
 \makeevenfoot{technote}%
     {\scriptsize ©\the\year\ \@author\ — All Rights Reserved}%
     {}%
-    {\ifrdraftdoc\textbf{\textit{DRAFT}—Consider inc\ mpl\ te and inkorrekt}\fi}
+    {\ifrdraftdoc
+      \draftwarnicon\ %
+      \textbf{\textit{DRAFT}}—\textit{Consider inc\_mpl\_te and inkorrekt}%
+    \fi}
 \makeoddfoot{technote}%
     {\scriptsize ©\the\year\ \@author\ — All Rights Reserved}%
     {}%
-    {\ifrdraftdoc\textbf{\textit{DRAFT}—Consider inc-mpl-te and inkorrekt}\fi}
+    {\ifrdraftdoc
+      \draftwarnicon\ %
+      \textbf{\textit{DRAFT}}—\textit{Consider inc\_mpl\_te and inkorrekt}%
+    \fi}
 
 \aliaspagestyle{chapter}{technote}
 \setlength{\headwidth}{\textwidth}
