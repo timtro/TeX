@@ -42,7 +42,11 @@
 \newif\ifrdraftdoc\rdraftdocfalse
 
 \DeclareOption{roughdraft}{\rdraftdoctrue}
+<<<<<<< HEAD
 \newcommand{\draftwarnicon}{\faExclamationTriangle}
+=======
+\newcommand{\draftwarnicon}{\faExclamationCircle}
+>>>>>>> a07cb03dbcd4daab28638e1dc5c918ff053278d9
 
 
 \ProcessOptions\relax
@@ -182,14 +186,22 @@
     {}%
     {\ifrdraftdoc
       \draftwarnicon\ %
+<<<<<<< HEAD
       \textbf{\textit{DRAFT}}—\textit{Consider inc\_mpl\_te and inkorrekt}%
+=======
+      \textbf{\textit{DRAFT}}—\textit{Consider inc\ mpl\ te and inkorrekt}%
+>>>>>>> a07cb03dbcd4daab28638e1dc5c918ff053278d9
     \fi}
 \makeoddfoot{technote}%
     {\scriptsize ©\the\year\ \@author\ — All Rights Reserved}%
     {}%
     {\ifrdraftdoc
       \draftwarnicon\ %
+<<<<<<< HEAD
       \textbf{\textit{DRAFT}}—\textit{Consider inc\_mpl\_te and inkorrekt}%
+=======
+      \textbf{\textit{DRAFT}}—\textit{Consider inc\ mpl\ te and inkorrekt}%
+>>>>>>> a07cb03dbcd4daab28638e1dc5c918ff053278d9
     \fi}
 
 \aliaspagestyle{chapter}{technote}
