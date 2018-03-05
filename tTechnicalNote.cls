@@ -15,7 +15,7 @@
 
 \usepackage{tColours}
 
-\usepackage[pdftex,
+\usepackage[
   plainpages=false,
   pdfpagelabels,
   bookmarksnumbered,
