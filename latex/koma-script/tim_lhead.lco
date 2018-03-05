@@ -1,0 +1,39 @@
+\ProvidesFile{tim_lhead.lco}[2014/02/21 lco
+(Tim Teatro)]
+
+\usepackage{fontawesome}
+\usepackage[colorlinks=true, urlcolor=lhd_linkcolor]{hyperref}
+
+\definecolor{lhd_linkcolor}{rgb}{0.2353, 0.4706, 0.6549}
+\definecolor{lhd_lighter}{gray}{.5}
+\definecolor{lhd_lighterr}{gray}{.7}
+
+
+\newdimen\tempdimen
+\makeatletter
+\@setplength{firstheadvpos}{0.0cm}
+\@setplength{refvpos}{4cm}
+\@setplength{toaddrvpos}{0cm}
+\makeatother
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+
+\setkomavar{signature}{\includegraphics[width=1.5in]{/home/timtro/Documents/ident/timsig.pdf}\\[0pt]
+\noindent Timothy A.V. Teatro}
+
+\firsthead{
+\null\hfill\hbox to 1in{\vbox to 1pt {\includegraphics[width=1in]{/home/timtro/Documents/ident/p_qr_code.pdf}}}\\
+\noindent\null\hskip-.5em\textit{\color{black!50}\small {\normalsize f}rom
+  the desk of}\\
+\textsc{\Large Timothy~A.~V.~Teatro}\\[-\parskip]
+\rule{\textwidth-1.00in}{.4pt}\hfill\\%
+\href{mailto:timothy.teatro@uoit.ca}{\url{timothy.teatro@uoit.ca}}
+  \hfill
+  \textcolor{lhd_lighter}{\faMobilePhone}\ +1.289.928.9569
+  $\ \cdot\ $
+  \textcolor{lhd_lighter}{\faGithub}\ \href{http://github.com/timtro}{timtro}
+  $\ \cdot\ $
+  \textcolor{lhd_lighter}{\faTwitter}\ \href{http://www.twitter.com/timtro}{@timtro}
+  \hbox to 1.00in
+}
