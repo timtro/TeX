@@ -15,27 +15,27 @@
 \RequirePackage{tColours}
 \lstloadlanguages{[11]C++}
 \lstdefinestyle{C++GIT}{ %
-  language=[11]C++,
-  xleftmargin=\parindent,
-  % columns=flexible,
-  breakatwhitespace=true,
-  breaklines=true,
-  keepspaces=true,
-  showstringspaces=true,
-  showtabs=false,
-  tabsize=2,
-  basicstyle=\ttfamily\lst@ifdisplaystyle\small\fi,
-  directivestyle={\color{gitish:red}},
-  keywordstyle=\bfseries\color{gitish:red},
-  commentstyle=\itshape\color{git:ltgray},
-  identifierstyle=\color{git:dkgray},
-  stringstyle=\color{git:orange},
-  numberstyle=\color{git:orange},
-  emphstyle=\color{gitish:turquoise}
+   language=[11]C++
+ , xleftmargin=\parindent
+ , breakatwhitespace=true
+ , breaklines=true
+ , keepspaces=true
+ , showstringspaces=false
+ , showtabs=false
+ , tabsize=2
+ , basicstyle={\ttfamily\lst@ifdisplaystyle\small\fi\color{black!50}}
+ , directivestyle={\color{gitish:red}}
+ , keywordstyle={\bfseries\itshape\color{black!70}}
+ , commentstyle={\itshape\color{git:ltgray}}
+ , identifierstyle={\color{black!90}}
+ , stringstyle={\color{black!60}}
+ , numberstyle={\color{black!60}}
+ , emphstyle={\color{gitish:turquoise}}
 }
+
 \lstset{
-  language=[11]C++,
-  style=C++GIT,
-  morekeywords={override},
-  moreemph={std, void, string, int, float, double, vector}
+   language=[11]C++
+ , style=C++GIT
+ , morekeywords={override}
+ , moreemph={void, string, int, float, double, vector, auto, constexpr, int8_t}
 }
