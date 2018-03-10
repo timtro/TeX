@@ -114,6 +114,7 @@
 \theoremstyle{plain}
 \newtheorem{definition}{Definition}
 \numberwithin{definition}{chapter}
+\numberwithin{equation}{chapter}
 
 \NewDocumentCommand{\MarginDefinition}{O{0pt} m}{%
    \refstepcounter{definition}%
