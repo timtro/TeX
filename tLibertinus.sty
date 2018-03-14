@@ -4,6 +4,7 @@
 % with Libertinus for body and math.
 %
 % Version: 0.1 - Nov 2016.
+%          0.2 - March 2018.
 %
 % Author: Timothy A.V. Teatro <timothy.teatro@uoit.net>
 %
@@ -16,35 +17,28 @@
 \usepackage{pgfornament}
 \usepackage{fontspec}
 \defaultfontfeatures{RawFeature=+calt}
-\usepackage{libertine}
-%\usepackage{lualatex-math}
+\setmainfont{libertinusserif-regular.otf}[Path = {/home/timtro/.fonts/type1/Libertinus/}]
+\setsansfont{libertinussans-regular.otf}[Path = {/home/timtro/.fonts/type1/Libertinus/}]
+\setmonofont{Hasklig}[
+    Scale = MatchLowercase
+  , BoldFont = *-Semibold
+  , Italicfont = *-It
+  , BoldItalic = *-SemiboldIt]
+
+% \setmonofont{libertinussans-regular.otf}[
+%     Path = {/home/timtro/.fonts/type1/Libertinus/}
+%   , BoldFont = libertinussans-bold.otf
+%   , ItalicFont = libertinussans-italic.otf ]
+
+\ifluatex\usepackage{lualatex-math}\fi
 \usepackage[math-style=ISO, partial=upright]{unicode-math}
 \setmathfont[Scale=MatchUppercase]{libertinusmath-regular.otf}
-\setmonofont{Source Code Pro}[Scale = MatchLowercase]
 
-% \setmainfont{Libertinus Serif}
-% \setsansfont{Libertinus Sans}
 %\setmathfont[AutoFakeBold]{libertinusmath-regular.otf}
 % \setmathfont{Libertinus Math}
 %\setmathfont[range={\lbrace, \rbrace}]{Latin Modern Math}
 %\setmathfont[range={\vert, \Vert, \Vvert}]{Latin Modern Math}
 
-% \setmonofont{Ubuntu Mono}[
-%   Scale=MatchLowercase,
-%   ItalicFeatures={Scale=MatchLowercase},
-%   ItalicFont={Ubuntu Mono Italic},
-% ] % Bad match for xheight in italics
-% \setmonofont{IBM Plex Mono}[Scale = MatchLowercase]
-% \setmonofont{Fira Code}[Scale = MatchLowercase, AutoFakeSlant=0.225]
-% \setmonofont{Liberation Mono}[Scale = MatchLowercase]
-% \setmonofont{Libertinus Sans}
-% \setmonofont{Hasklig}[
-%   Extension = .otf ,
-%   UprightFont = *-Regular ,
-%   BoldFont = *-Semibold ,
-%   FontFace = {k}{n}{*-Black} ,
-%   Scale = MatchLowercase
-% ]
 
 % \captiontitlefont{\footnotesize\sffamily}
 % \captionnamefont{\footnotesize\sffamily}
