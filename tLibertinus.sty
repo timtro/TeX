@@ -17,34 +17,45 @@
 \usepackage{pgfornament}
 \usepackage{fontspec}
 \defaultfontfeatures{RawFeature=+calt}
-\setmainfont{libertinusserif-regular.otf}[Path = {/home/timtro/.fonts/type1/Libertinus/}]
-\setsansfont{libertinussans-regular.otf}[Path = {/home/timtro/.fonts/type1/Libertinus/}]
+\setmainfont{libertinusserif-regular.otf}[
+    Path = {/home/timtro/.fonts/type1/Libertinus/}
+  , ItalicFont = libertinusserif-italic.otf
+  , BoldFont = libertinusserif-semibold.otf
+  , BoldItalicFont = libertinusserif-bolditalic.otf ]
+\setsansfont{libertinussans-regular.otf}[
+    Path = {/home/timtro/.fonts/type1/Libertinus/}
+  , ItalicFont = libertinussans-italic.otf
+  , BoldFont = libertinussans-bold.otf ]
 \setmonofont{Hasklig}[
     Scale = MatchLowercase
   , BoldFont = *-Semibold
-  , Italicfont = *-It
-  , BoldItalic = *-SemiboldIt]
+  , ItalicFont = *-It
+  , BoldItalicFont = *-SemiboldIt ]
 
-% \setmonofont{libertinussans-regular.otf}[
-%     Path = {/home/timtro/.fonts/type1/Libertinus/}
-%   , BoldFont = libertinussans-bold.otf
-%   , ItalicFont = libertinussans-italic.otf ]
+\newfontfamily{\textdf}[
+  Path = {/home/timtro/.fonts/type1/Libertinus/}
+    ]{libertinusserifdisplay-regular.otf}
+
+\newfontfamily{\textsb}[
+  Path = {/home/timtro/.fonts/type1/Libertinus/}
+    ]{libertinusserif-semibold.otf}
+
+\newfontfamily{\textsbit}[
+  Path = {/home/timtro/.fonts/type1/Libertinus/}
+    ]{libertinusserif-semibolditalic.otf}
 
 \ifluatex\usepackage{lualatex-math}\fi
 \usepackage[math-style=ISO, partial=upright]{unicode-math}
-\setmathfont[Scale=MatchUppercase]{libertinusmath-regular.otf}
+\setmathfont[
+    Path = {/home/timtro/.fonts/type1/Libertinus/}
+  , AutoFakeBold
+    ]{libertinusmath-regular.otf}
 
-%\setmathfont[AutoFakeBold]{libertinusmath-regular.otf}
-% \setmathfont{Libertinus Math}
-%\setmathfont[range={\lbrace, \rbrace}]{Latin Modern Math}
-%\setmathfont[range={\vert, \Vert, \Vvert}]{Latin Modern Math}
-
-
-% \captiontitlefont{\footnotesize\sffamily}
-% \captionnamefont{\footnotesize\sffamily}
+\captiontitlefont{\footnotesize\sffamily}
+\captionnamefont{\footnotesize\sffamily}
 
 \usepackage{lettrine}
-\newfontfamily{\infamily}{Roboto Condensed}[Scale=MatchLowercase]
+\newfontfamily{\infamily}{Roboto Condensed}[Scale=MatchUppercase]
 \renewcommand*{\DefaultLoversize}{0.1}
 \renewcommand{\LettrineFontHook}{\infamily}
 \renewcommand{\LettrineTextFont}{\sffamily\MakeTextUppercase}
