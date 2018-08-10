@@ -255,7 +255,8 @@
 \usepackage[wide, outercaption]{sidecap}
   \renewcommand{\sidecaptionsep}{5mm}
 
-
+\captiontitlefont{\footnotesize\sffamily}
+\captionnamefont{\footnotesize\sffamily}
 
 %%% Text macros
 %====================================================================
