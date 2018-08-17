@@ -77,6 +77,15 @@
 
 
 
+%%% Custom Environments.
+%====================================================================
+
+\newenvironment{eqnItems}
+    {\tightlists\begin{itemize}[\faCaretRight]}
+    {\end{itemize}}
+
+
+
 %%% Theorems, proofs, defs, etc.
 %====================================================================
 
@@ -225,7 +234,7 @@
       \newpage
     \fi
     % \null\vskip 1cm
-    \noindent\Huge\@title
+    \noindent\Huge{\RaggedRight\@title}
     \vskip 5mm
     \noindent\Large\@author
     \vskip 5mm
