@@ -16,16 +16,18 @@
 
 \usepackage{pgfornament}
 \usepackage{fontspec}
+\ifluatex\usepackage{lualatex-math}\fi
 \defaultfontfeatures{RawFeature=+calt}
-\setmainfont{libertinusserif-regular.otf}[
+\setmainfont{LibertinusSerif-Regular.otf}[
     Path = {/home/timtro/.fonts/type1/Libertinus/}
-  , ItalicFont = libertinusserif-italic.otf
-  , BoldFont = libertinusserif-semibold.otf
-  , BoldItalicFont = libertinusserif-bolditalic.otf ]
-\setsansfont{libertinussans-regular.otf}[
+  , ItalicFont = LibertinusSerif-Italic.otf
+  , BoldFont = LibertinusSerif-Semibold.otf
+  , BoldItalicFont = LibertinusSerif-BoldItalic.otf
+  , StylisticSet={5} ]
+\setsansfont{LibertinusSans-Regular.otf}[
     Path = {/home/timtro/.fonts/type1/Libertinus/}
-  , ItalicFont = libertinussans-italic.otf
-  , BoldFont = libertinussans-bold.otf ]
+  , ItalicFont = LibertinusSans-Italic.otf
+  , BoldFont = LibertinusSans-Bold.otf ]
 \setmonofont{Hasklig}[
     Scale = MatchLowercase
   , BoldFont = *-Semibold
@@ -34,31 +36,35 @@
 
 \newfontfamily{\textdf}[
   Path = {/home/timtro/.fonts/type1/Libertinus/}
-    ]{libertinusserifdisplay-regular.otf}
+    ]{LibertinusSerifDisplay-Regular.otf}
 
 \newfontfamily{\textsb}[
   Path = {/home/timtro/.fonts/type1/Libertinus/}
-    ]{libertinusserif-semibold.otf}
+    ]{LibertinusSerif-Semibold.otf}
 
 \newfontfamily{\textsbit}[
   Path = {/home/timtro/.fonts/type1/Libertinus/}
-    ]{libertinusserif-semibolditalic.otf}
+    ]{LibertinusSerif-SemiboldItalic.otf}
 
-\ifluatex\usepackage{lualatex-math}\fi
 \usepackage[math-style=ISO, partial=upright]{unicode-math}
 \setmathfont[
-    Path = {/home/timtro/.fonts/type1/Libertinus/}
-  , AutoFakeBold
-    ]{libertinusmath-regular.otf}
+  Path = {/home/timtro/.fonts/type1/Libertinus/},
+  AutoFakeBold
+ ]{LibertinusMath-Regular.otf}
+
+\ifluatex
+  \mathoption old 1 % Fixes italic correction!
+  \mathitalicsmode=1
+  % \mathdelimitersmode=7
+\fi
 
 \usepackage{lettrine}
-\newfontfamily{\infamily}{Roboto Condensed}[Scale=MatchUppercase]
+\newfontfamily{\infamily}{Roboto Condensed Bold}[Scale=MatchUppercase]
 \renewcommand*{\DefaultLoversize}{0.1}
 \renewcommand{\LettrineFontHook}{\infamily}
 \renewcommand{\LettrineTextFont}{\sffamily\MakeTextUppercase}
 
-\usepackage{adforn}
-\usepackage{pgfornament}
+\makeatletter
 \newcommand{\asterismFrame}[1]{\par\bigskip\noindent\hfill #1 \hfill\null\par\bigskip\@afterindentfalse\@afterheading}
 \newcommand{\linearAsterism}{\asterismFrame{$*\quad*\quad*$}}
 \newcommand{\bouquetAsterism}{\asterismFrame{%
@@ -67,10 +73,9 @@
     \end{tikzpicture}
   }
 }
+\makeatother
 \newcommand{\fleurAsterism}{\asterismFrame{\adfflowerright}}
 \newcommand{\sAsterism}{\asterismFrame{\adfopenflourishleft}}
 \newcommand{\ssAsterism}{\asterismFrame{\adfdoubleflourishleft}}
 \newcommand{\sssAsterism}{\asterismFrame{\adftripleflourishleft}}
 \newcommand{\sickleAsterism}{\asterismFrame{\adfsickleflourishleft}}
-
-\setmathfont[range={}]{libertinusmath-regular.otf} % Reload with empty range for correct spacing
